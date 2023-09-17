@@ -103,16 +103,5 @@ onUnmounted(() => document.removeEventListener('keyup', q))
       <Sidebar v-if="open" />
     </div>
 
-    <div class="relative w-full h-full min-h-screen max-h-screen overflow-auto">
-      <div class="sticky top-0 left-0 z-20 flex-none flex justify-between w-full h-14 px-2" :class="themes().get('topbar', 'bg-cyan-500 text-gray-700 hover:bg-cyan-600 hover:text-gray-800 transition-all ease-in-out duration-150').replace(/hover:(bg|text)-(.*?)-(\d+)/, '')">
-        <Toggler @toggle="open = ! open" />
-
-        <TopbarDropdown />
-      </div>
-
-      <main class="p-6">
-        <slot />
-      </main>
-    </div>
   </div>
 </template>
